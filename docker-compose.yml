@@ -6,7 +6,7 @@ services:
     build:
       args:
         container_project_path: /var/www/html/
-        host_project_path: ./src/
+        host_project_path: ./workspace/
         uid: 1000
         user: $USER
       context: .
@@ -15,7 +15,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./src/:/var/www/html/
+      - ./workspace/:/var/www/html/
 
   app-mysql:
     image: mysql:5.7
